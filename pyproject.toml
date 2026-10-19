@@ -5,6 +5,7 @@ requires-python = ">=3.11"
 dependencies = [
     "anthropic>=1.8.0",
     "chromadb>=1.5.9",
+    "claude-agent-sdk>=0.2.168",
     "fastapi[standerd]>=0.141.1",
     "google-genai>=2.25.0",
     "langchain-anthropic>=1.7.4",

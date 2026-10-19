@@ -11,6 +11,7 @@ class Env(BaseModel):
     anthropic_api_key : Url | None = os.getenv("ANTHROPIC_API_KEY")
     groq_api_key : Url | None = os.getenv("GROQ_API_KEY")
     openrouter_api_key : Url | None = os.getenv("OPENROUTER_API_KEY")
+    anthropic_api_key: Url | None = os.getenv("ANTHROPIC_AGENTIC_SDK")
 
     @field_validator("openai_api_key", "gemini_api_key", "anthropic_api_key", "groq_api_key", "openrouter_api_key")
     @classmethod

@@ -136,3 +136,4 @@ webcolors==25.10.0
 webencodings==0.6.1
 websocket-client==1.9.2
 wrapt==2.1.2
+yt-dlp==2026.8.19
