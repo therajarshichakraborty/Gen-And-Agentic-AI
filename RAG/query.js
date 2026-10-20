@@ -9,8 +9,10 @@ const client = new OpenAI({
 });
 
 async function query(userQuery) {
-    // Convert user query to vector embeddings?
-    // Initialize the embedding model
+    /**
+     * Convert user query to vector embeddings?
+     Initialize the embedding model
+    */
     const embeddings = new OpenAIEmbeddings({
         configuration: {
             baseURL: "https://openrouter.ai/api/v1"
@@ -19,21 +21,20 @@ async function query(userQuery) {
         apiKey: env.OPENROUTER_API_KEY,
     });
 
-    // search the vectors in the qdrant
-    // The vector store
+    /** search the vectors in the qdrant
+     The vector store
+    */
     const vectorStore = await QdrantVectorStore.fromExistingCollection(
-        embeddings, // Use this embedding model
+        embeddings,
         {
             url: 'http://localhost:6333',
             collectionName: 'dsa-docs',
         },
     );
 
-    // get simialr vectors and chunks?
     const vectorRetriver = vectorStore.asRetriever({ k: 5 });
     const results = await vectorRetriver.invoke(userQuery);
 
-    // feed those chunks to llm model and do a simple chat with {userQuery}
     const SYSTEM_PROMPT = `
     You are an expert in answereing user query based on the provided context about document.
     Do not answere anything beyond what is not provided.
