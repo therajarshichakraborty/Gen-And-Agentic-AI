@@ -72,7 +72,7 @@ async function runAgent() {
           }
         }
       } else if (message.type === "result") {
-        console.log(`\n✅ Done: ${message.subtype}`);
+        console.log(`\nDone: ${message.subtype}`);
       }
     }
   } catch (error) {

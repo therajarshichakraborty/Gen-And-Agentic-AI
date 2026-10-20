@@ -134,7 +134,7 @@ async function callGraph() {
 }
 
 await callGraph()
-.then(()=>{
-  console.log(" \n Graph created successfully")
-})
-.catch(console.error);
+  .then(() => {
+    console.log(" \n Graph created successfully");
+  })
+  .catch(console.error);

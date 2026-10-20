@@ -6,6 +6,6 @@ __pycache__/
 docs/.agent/
 docs/.env
 docs/.gitignore
-.venv
+.venv/
 
 projects/ideas.md
